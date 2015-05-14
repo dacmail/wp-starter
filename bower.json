@@ -1,0 +1,23 @@
+{
+  "name": "sanitas",
+  "version": "1.0.0.",
+  "homepage": "https://github.com/agilemedialab/sanitas",
+  "authors": [
+    "Daniel Aguilar <hola@soydac.com>"
+  ],
+  "description": "Sanitas WordPress Theme",
+  "main": "index.php",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "sanitas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
