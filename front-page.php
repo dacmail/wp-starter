@@ -1,7 +1,9 @@
 <?php get_header() ?>
-<div id="container" class="clearfix">
-	<section id="content" class="clearfix">
-		<?php $featured = new WP_Query(array('meta_key' => '_ungrynerd_featured', 'meta_value' => 'on', 'post_type'=>'page, post', 'posts_per_page' => -1)); ?>
+<div id="container" class="container">
+	<div class="row">
+		<div class="col-sm-9">
+			<section id="content" class="clearfix">
+				<?php $featured = new WP_Query(array('meta_key' => '_ungrynerd_featured', 'meta_value' => 'on', 'post_type'=>'page, post', 'posts_per_page' => -1)); ?>
 		<?php while ($featured->have_posts()) : $featured->the_post(); ?>
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 				<h1 class="post-title">
@@ -16,11 +18,13 @@
 				<div class="meta"><?php the_tags(); ?></div>
 			</article>
 		<?php endwhile; ?>
-	</section>
-	<nav class="pagination">
-		<?php previous_posts_link( __('Anterior', 'ungrynerd')); ?>
-		<?php next_posts_link( __('Siguiente', 'ungrynerd')); ?>
-	</nav>
-	<?php get_sidebar() ?>
+			</section>
+			<nav class="pagination">
+				<?php previous_posts_link( __('Anterior', 'ungrynerd')); ?>
+				<?php next_posts_link( __('Siguiente', 'ungrynerd')); ?>
+			</nav>
+		</div>
+		<?php get_sidebar() ?>
+	</div> <!-- /.row -->
 </div>
 <?php get_footer() ?>
