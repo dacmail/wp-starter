@@ -2,18 +2,21 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       scripts: {
-        src: ['assets/scripts/main.js', 'bower_components/bootstrap/dist/js/bootstrap.js'],
+        src: ['assets/scripts/main.js', 'assets/scripts/bootstrap.js'],
         dest: 'js/main.js'
       }
     },
     uglify: {
-      styles: {
-        src: 'css/main.css',
-        dest: 'css/main.min.css'
-      },
       scripts: {
         src: 'js/main.js',
-        dest: 'js/main.min.js'
+        dest: 'js/main.js'
+      }
+    },
+    cssmin: {
+      target: {
+        files: {
+          'css/main.css': ['css/main.css']
+        }
       }
     },
     watch: {
@@ -48,10 +51,12 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
   grunt.registerTask('default', ['less:development','concat']);
+  grunt.registerTask('build', ['less:production','concat', 'uglify', 'cssmin']);
 
 };

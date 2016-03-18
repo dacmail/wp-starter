@@ -12,6 +12,6 @@
 	// Modo mantenimiento par ano logueados
 	// add_action('get_header','ungrynerd_maintenace');
 	function ungrynerd_maintenace() {
-		if ( !is_user_logged_in()) { wp_die('<h2>Modo mantenimiento, vuelve más tarde.</h2>') }
+		if ( !is_user_logged_in()) { wp_die('<h2>Modo mantenimiento, vuelve más tarde.</h2>'); }
 	}
 ?>
