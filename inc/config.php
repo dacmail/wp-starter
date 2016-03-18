@@ -19,7 +19,7 @@
 		if ( function_exists('register_nav_menus')) {
 			register_nav_menus(
 				array(
-				  'main' => 'Menu principal',
+				  'main' => esc_html__('Menu principal', 'ungrynerd'),
 				  'secondary' => 'Menu secundario'
 				)
 			);
@@ -51,7 +51,7 @@
 		    'after_widget' => '</div>',
 		    'before_title' => '<h2 class="title">',
 		 	'after_title' => '</h2>',
-		 	'name' => 'Barra Lateral'
+		 	'name' => esc_html__('Barra Lateral', 'ungrynerd')
 		));
 	}
 	add_action('widgets_init', 'ungrynerd_widgets_init');	
