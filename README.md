@@ -11,6 +11,7 @@ To install follow the instructions:
 # Grunt commands
 
 * `grunt` — Compile the files in your assets directory and put it in js/ and css/ folders.
+* `grunt prepare` — Move vendor assets from bower_components to assets folder (useful after `bower update`).
 * `grunt watch` — Compile assets when file changes are made
 * `grunt build` — Compile/minimize assets and put it in js/ and css/ folders.
 
