@@ -10,11 +10,11 @@ To install follow the instructions:
 
 # Grunt commands
 
-* `grunt` — Compile the files in your assets directory
+* `grunt` — Compile the files in your assets directory and put it in js/ and css/ folders.
+* `grunt prepare` — Move vendor assets from bower_components to assets folder (useful after `bower update`).
 * `grunt watch` — Compile assets when file changes are made
+* `grunt build` — Compile/minimize assets and put it in js/ and css/ folders.
 
-#TO-DO
+# Development mode
 
-* Adding font awesome component
-* Automatizes assets compilations
-* Dev and production enviroments
+* Change WP_DEVELOPMENT_MODE to true in `inc/actions.php` to use files in assets folder without compiling.
