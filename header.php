@@ -19,7 +19,8 @@
 								'container_id' => 'main-menu', 
 								'container_class' => 'collapse width navbar-collapse', 
 								'menu_class' => 'nav navbar-nav',
-								'theme_location' => 'main')); ?>
+								'theme_location' => 'main',
+								'fallback_cb' => false)); ?>
 
 		</div> <!--- /.container -->
 	</header>
