@@ -106,7 +106,7 @@
 	}
 
 	// DEVELOPMENT MODE LESS FILES
-	if (defined('WP_DEVELOPMENT_MODE') && WP_DEVELOPMENT_MODE ) {
+	if (defined('WP_DEVELOPMENT_MODE') && WP_DEVELOPMENT_MODE && !is_admin() ) {
 		add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
 	}
 	
