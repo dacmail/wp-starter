@@ -127,26 +127,7 @@ class RWMB_Datetime_Field extends RWMB_Text_Field
 	 */
 	public static function value( $new, $old, $post_id, $field )
 	{
-		if ( $field['timestamp'] )
-		{
-			$new = self::prepare_value( $new, $field );
-		}
-		return $new;
-	}
-
-	/**
-	 * Prepare value before saving if set 'timestamp'
-	 * @param array|string $value The submitted value
-	 * @param array        $field Field parameter
-	 * @return array
-	 */
-	protected static function prepare_value( $value, $field )
-	{
-		if ( $field['clone'] )
-		{
-			return array_map( __METHOD__, $value );
-		}
-		return isset( $value['timestamp'] ) ? $value['timestamp'] : null;
+		return  $field['timestamp'] ? $new['timestamp'] : $new;
 	}
 
 	/**
@@ -216,7 +197,7 @@ class RWMB_Datetime_Field extends RWMB_Text_Field
 			) );
 		}
 
-		$field = RWMB_Text_Field::normalize( $field );
+		$field = parent::normalize( $field );
 
 		return $field;
 	}
