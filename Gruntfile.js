@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       scripts: {
-        src: ['assets/scripts/main.js', 'assets/scripts/bootstrap.js'],
+        src: ['assets/scripts/main.js', 'assets/scripts/*.js'],
         dest: 'js/main.js'
       }
     },
@@ -26,60 +26,27 @@ module.exports = function(grunt) {
       },
       styles: {
         files: 'assets/styles/*',
-        tasks: ['less:development']
+        tasks: ['sass:development']
       }
     },
-    less: {
+    sass: {
       development: {
         files: {
-          "css/main.css": "assets/styles/main.less"
-        }
-      },
-      production: {
-        options: {
-          plugins: [
-            new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]})
-          ]
-        },
-        files: {
-          "css/main.css": "assets/styles/main.less"
+          "css/main.css": "assets/styles/main.scss"
         }
       }
-    },
-    copy: {
-      fonts: {
-        files: [
-            {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['**'], dest: 'assets/fonts/'},
-            {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: 'assets/fonts/'},
-            {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['**'], dest: 'fonts/'},
-            {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: 'fonts/'},
-          ],
-      },
-      css: {
-        files: [
-            {expand: true, cwd: 'bower_components/font-awesome/css/', filter: 'isFile', src: ['font-awesome.css'], dest: 'assets/styles/'},
-            {expand: true, cwd: 'bower_components/bootstrap/dist/css/', filter: 'isFile', src: ['bootstrap.css'], dest: 'assets/styles/'},
-          ],
-      },
-      js: {
-        files: [
-            {expand: true, cwd: 'bower_components/bootstrap/dist/js/', filter: 'isFile', src: ['bootstrap.js'], dest: 'assets/scripts/'},
-          ],
-      },
     },
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task.
-  grunt.registerTask('prepare', ['copy']);
-  grunt.registerTask('default', ['less:development','concat']);
-  grunt.registerTask('build', ['less:production','concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['sass','concat']);
+  grunt.registerTask('build', ['sass','concat', 'uglify', 'cssmin']);
 
 };
