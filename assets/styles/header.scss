@@ -1,11 +1,22 @@
 .header {
-    .header__logo {
+    .header__wrapper {
+        display: flex;
+        justify-content: space-between;
+        .header__logo {
 
+        }
+        .header__menu-toggle {
+            display: none;
+            @include media-max(md) {
+                display: block;
+            }
+        }
     }
+
     .header__menu {
         display: flex;
         @include media-max(md) {
-            display: block;
+            display: none;
         }
         .menu-item {
             flex: 1 1 100%;
@@ -29,16 +40,28 @@
                 > .sub-menu {
                     left: 0;
                     right: auto;
+                    @include media-max(md) {
+                        top: 100%;
+                        position: relative;
+                        left: 15px;
+                    }
                     .menu-item {
                         &:hover {
                             .sub-menu {
                                 top: 0px;
                                 left: 100%;
                                 right: auto;
+                                @include media-max(md) {
+                                    top: 100%;
+                                    position: relative;
+                                    left: 15px;
+                                }
                             }
                         }
                     }
                 }
+
+
             }
         }
     }
