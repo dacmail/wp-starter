@@ -1,9 +1,9 @@
 <?php get_header() ?>
-<div id="container" class="container">
+<section class="container">
 	<div class="row">
 		<div class="col-sm-9">
 			<section id="content" class="clearfix">
-				<?php get_template_part( 'loop', 'single' ); ?>
+				<?php get_template_part('templates/loop', 'index'); ?>
 			</section>
 			<div class="pagination-wrap">
 				<?php ungrynerd_pagination(); ?>
@@ -11,5 +11,5 @@
 		</div>
 		<?php get_sidebar() ?>
 	</div> <!-- /.row -->
-</div>
+</section>
 <?php get_footer() ?>

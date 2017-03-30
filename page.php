@@ -1,12 +1,12 @@
 <?php get_header() ?>
-<div id="container" class="container">
+<section class="container">
 	<div class="row">
 		<div class="col-sm-9">
 			<section id="content" class="clearfix">
-				<?php get_template_part( 'loop', 'single' ); ?>
+				<?php get_template_part('loop', 'page'); ?>
 			</section>
 		</div>
 		<?php get_sidebar() ?>
 	</div> <!-- /.row -->
-</div>
+</section>
 <?php get_footer() ?>
