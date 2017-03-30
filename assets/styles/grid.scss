@@ -56,6 +56,13 @@ html {
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
 
+// Wrapper to maximum breakpoint width media query
+@mixin media-max($breakpoint) {
+  @media (max-width: breakpoint-max($breakpoint, $grid-breakpoints)  ) {
+    @content;
+  }
+}
+
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {

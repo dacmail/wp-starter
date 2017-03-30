@@ -1,15 +1,13 @@
-$md: breakpoint-max(md, $grid-breakpoints);
-
 /* Large screens */
-@media (max-width: $md  ) {
+@include media-max(lg) {
 
 }
 /* Medium screens */
-@media (max-width: $md) {
+@include media-max(md) {
 
 }
 /* Small screens*/
-@media (max-width: $md ) {
+@include media-max(sm) {
 
 }
 

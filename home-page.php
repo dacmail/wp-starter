@@ -1,3 +1,4 @@
+<?php /* Template Name: Homepage */ ?>
 <?php get_header() ?>
 <div id="container" class="container">
 	<div class="row">

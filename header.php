@@ -6,21 +6,19 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header class="navbar" id="header">
+	<header class="header">
 		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-menu">
-					<span class="sr-only"><?php _e('Toggle navigation', 'ungrynerd'); ?></span>
-					<?php _e('Menu', 'ungrynerd'); ?>
-				</button>
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo navbar-brand"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a>
-			</div>
+			<a href="<?php echo esc_url(home_url('/')); ?>" class="header__logo">
+				<?php if (has_custom_logo()): ?>
+					<?php the_custom_logo(); ?>
+				<?php else: ?>
+					<?php bloginfo('name'); ?>
+				<?php endif ?>
+			</a>
+			<button class="header__menu-toggle"><?php esc_html_e('Menu', 'ungrynerd'); ?></button>
 			<?php wp_nav_menu(array('container' => 'nav',
-								'container_id' => 'main-menu', 
-								'container_class' => 'collapse width navbar-collapse', 
-								'menu_class' => 'nav navbar-nav',
+								'menu_class' => 'header__menu',
 								'theme_location' => 'main',
 								'fallback_cb' => false)); ?>
-
 		</div> <!--- /.container -->
 	</header>

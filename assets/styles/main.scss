@@ -1,7 +1,19 @@
+/*
+    Normalize, variables, grid & wp_defaults
+*/
+@import "normalize";
 @import "variables";
 @import "grid";
 @import "wp_defaults";
 
+/*
+    Commons
+*/
+@import "commons";
 
+/*
+    Header
+*/
+@import "header";
 
 @import "mediaqueries";
