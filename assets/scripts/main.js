@@ -1,12 +1,11 @@
 (function($) {
-	$(document).ready(function() {
-		//JS
+  $(document).on('ready', function() {
     $(document).on('click', '.header__menu-toggle', function(event) {
       event.preventDefault();
       $('.header__menu').toggle();
     });
-	});
-	$(window).load(function() {
-		//JS
-	});
+  });
+  $(window).on('load', function() {
+    //JS
+  });
 })(jQuery);
